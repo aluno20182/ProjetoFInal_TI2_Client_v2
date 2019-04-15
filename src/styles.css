@@ -1,15 +1,57 @@
 body {
   margin: 0;
   font-family: Gill Sans, sans-serif;
-  color: #E63946;
+  color: #e63946;
   text-align: center;
-  background: #F1FAEE;
+  background: #f1faee;
 }
 
+
+.large-header {
+  position: relative;
+  width: 100%;
+  background: #111;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
+}
+
+.demo .large-header {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
+}
+
+.main-title {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  color: #F9F1E9;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.demo .main-title {
+  text-transform: uppercase;
+  font-size: 4.2em;
+  letter-spacing: 0.1em;
+}
+
+.main-title .thin {
+  font-weight: 200;
+}
+
+@media only screen and (max-width: 768px) {
+  .demo .main-title {
+     font-size: 3em;
+  }
+}
 /* Add a golden background color to the top navigation */
 .topnav {
   overflow: hidden;
-  background-color:#1D3557;
+  background-color: #1d3557;
 }
 /* Style the links inside the navigation bar */
 .topnav a {
@@ -23,33 +65,29 @@ body {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #A8DADC;
+  background-color: #a8dadc;
   color: white;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #457B9D;
+  background-color: #457b9d;
   color: white;
 }
 
 .moldura {
   background-color: white;
   margin: auto;
+  height: 300px;
   width: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #efefef;
-  box-shadow:
-    /* The top layer shadow */ 0 1px 1px rgba(0, 0, 0, 0.15),
-    5px 10px;
-
-  padding: 10px;
+  object-fit: cover;
 }
 
 .footer {
-  position: static;
+  position: relative;
   right: 0;
   bottom: 0;
   left: 0;
@@ -58,21 +96,21 @@ body {
   text-align: center;
 }
 
-/*the container must be positioned relative:*/
+/*the container must be positioned relative:
 .custom-select {
   position: absolute;
   font-family: Arial;
 }
 
 .custom-select select {
-  display: none; /*hide original SELECT element:*/
+  display: none; /*hide original SELECT element:
 }
 
 .select-selected {
   background-color: DodgerBlue;
 }
 
-/*style the arrow inside the select element:*/
+/*style the arrow inside the select element:
 .select-selected:after {
   position: absolute;
   content: "";
@@ -84,13 +122,13 @@ body {
   border-color: #fff transparent transparent transparent;
 }
 
-/*point the arrow upwards when the select box is open (active):*/
+/*point the arrow upwards when the select box is open (active):
 .select-selected.select-arrow-active:after {
   border-color: transparent transparent #fff transparent;
   top: 7px;
 }
 
-/*style the items (options), including the selected item:*/
+/*style the items (options), including the selected item:
 .select-items div,
 .select-selected {
   color: #ffffff;
@@ -101,7 +139,7 @@ body {
   user-select: none;
 }
 
-/*style items (options):*/
+/*style items (options):
 .select-items {
   position: absolute;
   background-color: DodgerBlue;
@@ -111,7 +149,7 @@ body {
   z-index: 99;
 }
 
-/*hide the items when the select box is closed:*/
+/*hide the items when the select box is closed:
 .select-hide {
   display: none;
 }
@@ -119,4 +157,11 @@ body {
 .select-items div:hover,
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
+}
+*/
+
+#foto {
+  border: 1px solid;
+  padding: 5px;
+  box-shadow: 5px 40px #a8dadc;
 }
