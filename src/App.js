@@ -10,11 +10,11 @@ function App() {
     <div class="container demo">
       <div class="content">
         <div id="large-header" class="large-header">
-          <canvas id="demo-canvas" />
           <Header />
-          <h1>Trabalho Final</h1>
-          <h2>Tomablr</h2>
-          <div class="custom-select">
+          <div class="header">
+            <h1 class="main-title">Tomblr</h1>
+          </div>
+          <div class="custom-select" style={{ width: 200 }}>
             <select>
               <option value="0">Post Por Pagina:</option>
               <option value="1">5</option>
