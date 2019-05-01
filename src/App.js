@@ -13,23 +13,20 @@ function App() {
           <Header />
           <div class="header">
             <h1 class="main-title">Tomblr</h1>
+            <input type="text" name="search" placeholder="Search.." />
           </div>
-          <div class="custom-select" style={{ width: 200 }}>
-            <select>
-              <option value="0">Post Por Pagina:</option>
-              <option value="1">5</option>
-              <option value="2">10</option>
-              <option value="3">15</option>
-              <option value="4">20</option>
-              <option value="5">25</option>
-              <option value="6">40</option>
-            </select>
-          </div>
+          <br />
           <br />
           <MainContent />
           <br />
           <br />
-          <br />
+          <div class="select-page">
+            <a href="#pag1"> 1 </a>
+            <a href="#pag2"> 2 </a>
+            <a href="#pag3"> 3 </a>
+            <a href="#pag4"> 4 </a>
+            <a href="#pag5"> 5 </a>
+          </div>
           <br />
           <br />
           <br />

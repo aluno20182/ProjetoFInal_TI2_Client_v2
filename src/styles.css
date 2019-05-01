@@ -2,6 +2,9 @@ body {
   margin: 0;
   font-family: Gill Sans, sans-serif;
 }
+* {
+  box-sizing: border-box;
+}
 
 /* Header/logo Title */
 .header {
@@ -16,9 +19,27 @@ body {
   font-size: 50px;
 }
 
+input[type="text"] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url("searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type="text"]:focus {
+  width: 100%;
+}
+
 .large-header {
   background-position: center;
-
 }
 
 .demo .large-header {
@@ -26,7 +47,6 @@ body {
 }
 
 .main-title {
-  position: relative;
   margin: 0;
   padding: 0;
   color: #f9f1e9;
@@ -42,7 +62,6 @@ body {
 .main-title .thin {
   font-weight: 200;
 }
-
 
 /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
 .navbar {
@@ -87,26 +106,126 @@ body {
     width: 100%;
   }
 }
-
-.moldura {
-  background-color: white;
-  margin: auto;
-  height: 300px;
-  width: 75%;
+.row {
+  display: -ms-flexbox; /* IE10 */
   display: flex;
-  flex-direction: column;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+/* PÁGINA DE POSTS */
+.mainPage {
+  margin: 20px;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+.moldura {
+  width: 100%;
+}
+
+.moldura:hover {
+  opacity: 0.5;
 }
 
 .footer {
   background-color: #efefef;
   text-align: center;
-  padding: 1px
+  padding: 1px;
 }
 
-#foto {
-  border: 1px solid;
-  padding: 5px;
-  box-shadow: 5px 5px #000000;
+.select-page {
+  text-align: center;
+}
+
+.select-page a {
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.select-page a:hover {
+  background-color: #666;
+}
+
+.select-page a.active {
+  background-color: #666;
+  color: white;
+}
+
+.custom-select {
+  position: static;
+  text-align: right;
+
+  /*text-align: center;
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+
+  margin: 4px 2px;
+  */
+}
+
+.custom-select select {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  width: 200px;
+  height: 40px;
+  border: none;
+  font-size: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.custom-select:before {
+  content: "";
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+.custom-select:hover:before {
+  background: #333;
 }
