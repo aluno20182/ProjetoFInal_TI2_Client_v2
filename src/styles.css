@@ -10,7 +10,7 @@ body {
 .header {
   padding: 80px;
   text-align: center;
-  background: #666;
+  background: #edffff;
   color: white;
 }
 
@@ -49,7 +49,7 @@ input[type="text"]:focus {
 .main-title {
   margin: 0;
   padding: 0;
-  color: #f9f1e9;
+  color: #779fc4;
   text-align: center;
 }
 
@@ -66,7 +66,7 @@ input[type="text"]:focus {
 /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: #123f72;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
@@ -95,7 +95,7 @@ input[type="text"]:focus {
 
 /* Active/current link */
 .navbar a.active {
-  background-color: #666;
+  background-color: #12305b;
   color: white;
 }
 
@@ -162,7 +162,7 @@ input[type="text"]:focus {
 }
 
 .footer {
-  background-color: #efefef;
+  background-color: #8da9c4;
   text-align: center;
   padding: 1px;
 }
@@ -172,7 +172,7 @@ input[type="text"]:focus {
 }
 
 .select-page a {
-  background-color: #333;
+  background-color: #12305b;
   border: none;
   color: white;
   padding: 15px 20px;
@@ -184,11 +184,11 @@ input[type="text"]:focus {
   cursor: pointer;
 }
 .select-page a:hover {
-  background-color: #666;
+  background-color: #123f72;
 }
 
 .select-page a.active {
-  background-color: #666;
+  background-color: #8da9c4;
   color: white;
 }
 
@@ -209,7 +209,7 @@ input[type="text"]:focus {
 }
 
 .custom-select select {
-  background-color: #333;
+  background-color: #12305b;
   color: #fff;
   padding: 10px;
   width: 200px;
@@ -217,15 +217,4 @@ input[type="text"]:focus {
   border: none;
   font-size: 15px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-}
-
-.custom-select:before {
-  content: "";
-  position: relative;
-  top: 0;
-  right: 0;
-}
-
-.custom-select:hover:before {
-  background: #333;
 }
