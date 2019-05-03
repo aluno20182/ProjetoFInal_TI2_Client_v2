@@ -10,7 +10,7 @@ body {
 .header {
   padding: 80px;
   text-align: center;
-  background: #edffff;
+  background: black;
   color: white;
 }
 
@@ -43,7 +43,7 @@ input[type="text"]:focus {
 }
 
 .demo .large-header {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
+  background-color: black;
 }
 
 .main-title {
@@ -68,6 +68,7 @@ input[type="text"]:focus {
   overflow: hidden;
   background-color: #123f72;
   position: sticky;
+  z-index: 99;
   position: -webkit-sticky;
   top: 0;
 }

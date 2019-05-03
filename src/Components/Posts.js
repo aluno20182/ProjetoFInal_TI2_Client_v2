@@ -20,7 +20,6 @@ const posts = [
   },
   {
     id: 5,
-    author: "Raquel",
     imgUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_UVkBN5Wr0cZI6NtQZTWDIfV-DL8WWUkSs1YnLPJY3NSVixBw"
   },
@@ -70,4 +69,4 @@ const posts = [
   }
 ];
 
-export default posts;
+export { posts };
