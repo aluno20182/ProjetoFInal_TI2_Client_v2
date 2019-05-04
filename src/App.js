@@ -6,19 +6,29 @@ import { MainContent } from "./Components/MainContent.js";
 import Footer from "./Components/Footer.js";
 
 export class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { filter: "" };
+    this.search = this.search.bind(this); //função que é passada como prop para actualizar o estado do compoente pai
+  }
   render() {
     return (
-      <div class="container demo">
+      <div class="demo">
         <div class="content">
           <div id="large-header" class="large-header">
             <Header />
             <div class="header">
               <h1 class="main-title">Tomblr</h1>
-              <input type="text" id="myInput" onkeyup="myFunction()" name="search" placeholder="Search..."/>
+              <input
+                type="text"
+                id="myInput"
+                name="search"
+                placeholder="Search..."
+              />
             </div>
             <br />
             <br />
-            <MainContent />
+            <MainContent filter={this.state.filter} />
             <br />
 
             <br />
@@ -37,28 +47,11 @@ export class App extends React.Component {
           </div>
         </div>
       </div>
-
-
-
-
     );
-
-    function myFunction() {
-      var input, filter, ul, li, a, i, txtValue;
-      input = document.getElementById("myInput");
-      filter = input.value.toUpperCase();
-      ul = document.getElementById("myUL");
-      li = ul.getElementsByTagName("li");
-      for (i = 0; i < li.length; i++) {
-          a = li[i].getElementsByTagName("a")[0];
-          txtValue = a.textContent || a.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              li[i].style.display = "";
-          } else {
-              li[i].style.display = "none";
-          }
-      }
   }
+  search() {
+    let searchTxt = document.getElementById("searchBar").value;
+    this.setState({ filter: searchTxt });
   }
 }
 
