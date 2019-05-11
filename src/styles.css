@@ -26,7 +26,6 @@ input[type="text"] {
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
-  background-image: url("searchicon.png");
   background-position: 10px 10px;
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
@@ -35,7 +34,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  width: 100%;
+  width: 50%;
 }
 
 .large-header {
@@ -116,35 +115,29 @@ input[type="text"]:focus {
 }
 
 /* Create four equal columns that sits next to each other */
-.container {
-  position: relative;
-  width: 50%;
+.column {
   -ms-flex: 25%; /* IE10 */
   flex: 25%;
-  max-width: 50%;
+  max-width: 25%;
   padding: 0 4px;
 }
 
-.container .image {
+.column .image {
   margin-top: 8px;
   vertical-align: middle;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  border-radius: 5px;
 }
-.container:hover .image {
+.column:hover .image {
   opacity: 0.3;
+  cursor: pointer;
 }
 
-.container:hover .middle {
+.column:hover .middle {
   opacity: 1;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
-  .container {
+  .column {
     -ms-flex: 50%;
     flex: 50%;
     max-width: 50%;
@@ -153,7 +146,7 @@ input[type="text"]:focus {
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .container {
+  .column {
     -ms-flex: 100%;
     flex: 100%;
     max-width: 100%;

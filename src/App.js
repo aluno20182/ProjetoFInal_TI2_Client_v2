@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./styles.css";
-import Header from "./Components/Header.js";
+import { Header } from "./Components/Header.js";
 import { MainContent } from "./Components/MainContent.js";
 import Footer from "./Components/Footer.js";
 
@@ -16,21 +16,14 @@ export class App extends React.Component {
       <div class="demo">
         <div class="content">
           <div id="large-header" class="large-header">
-            <Header />
+            <Header filter={this.search} />
             <div class="header">
               <h1 class="main-title">Tomblr</h1>
-              <input
-                type="text"
-                id="myInput"
-                name="search"
-                placeholder="Search..."
-              />
             </div>
             <br />
             <br />
             <MainContent filter={this.state.filter} />
             <br />
-
             <br />
             <div class="select-page">
               <a href="#pag1"> 1 </a>
@@ -54,5 +47,3 @@ export class App extends React.Component {
     this.setState({ filter: searchTxt });
   }
 }
-
-export default App;

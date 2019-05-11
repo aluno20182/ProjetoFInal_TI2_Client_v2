@@ -12,6 +12,7 @@ export class Detalhes extends React.Component {
                 onClick={() => this.props.return()}
                 src={this.props.imgUrl}
               />
+              <h3>Tipo: {this.props.tipo}</h3>
             </td>
           </tr>
         </table>

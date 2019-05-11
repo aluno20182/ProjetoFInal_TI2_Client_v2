@@ -8,22 +8,19 @@ export class Moldura extends React.Component {
   }
   render() {
     return (
-      <div class="container">
-        <table>
-          <tr>
-            <td colSpan="2">
-              <img
-                alt={this.props.tipo}
-                src={this.props.imgUrl}
-                class="image"
-                //onClick={() => this.props.show(this.props.postId)}
-              />
-              <div class="middle">
-                <div class="text">John Doe</div>
-              </div>
-            </td>
-          </tr>
-        </table>
+      <div class="row">
+        <div class="column">
+          <h3>{this.props.author}</h3>
+          <img
+            alt={this.props.tipo}
+            src={this.props.imgUrl}
+            class="image"
+            onClick={() => this.props.show(this.props.postId)}
+          />
+          {/*<div class="middle">
+            <div type="button">John Doe</div>
+          </div>*/}
+        </div>
       </div>
     );
   }

@@ -1,6 +1,8 @@
 import React from "react";
+
 import { Moldura } from "./Moldura.js";
 import posts from "./Posts.js";
+import { Detalhes } from "./Detalhes.js";
 
 export class MainContent extends React.Component {
   constructor(props) {
@@ -12,26 +14,34 @@ export class MainContent extends React.Component {
     };
   }
   render() {
-    return (
-      <main>
-        <div>
-          <div class="custom-select">
-            <select>
-              <option>Post Por Pagina:</option>
-              <option>5</option>
-              <option>10</option>
-              <option>15</option>
-              <option>20</option>
-              <option>25</option>
-              <option>40</option>
-            </select>
-            {this.postPosts()}
+    console.log("Body");
+    console.log(this.state);
+    if (this.props.filter === "" && this.state.allPosts) {
+      return (
+        <main>
+          <div>
+            <div class="custom-select">
+              <select>
+                <option>Post Por Pagina:</option>
+                <option>5</option>
+                <option>10</option>
+                <option>15</option>
+                <option>20</option>
+                <option>25</option>
+                <option>40</option>
+              </select>
+              {this.postPosts()}
+            </div>
+            <br />
+            <Moldura />
           </div>
-          <br />
-          <Moldura />
-        </div>
-      </main>
-    );
+        </main>
+      );
+    } else if (this.state.allPosts) {
+      return <div className="body"> {this.postTipo(this.props.filter)} </div>;
+    } else {
+      return <div className="body">{this.postDetail(this.state.idPost)}</div>;
+    }
   }
 
   showPost = id => {
@@ -81,4 +91,24 @@ export class MainContent extends React.Component {
     }
     return postTipoComponent;
   };
+
+  //função que cria uma view para cada um dos posts depois de clickada
+  postDetail = id => {
+    const postDetalhesPost = [];
+    for (let i = 0; i < posts.length; i++) {
+      if (posts[i].id === id) {
+        postDetalhesPost.push(
+          <Detalhes
+            return={() => this.showPosts()}
+            key={posts[i].id}
+            postId={posts[i].id}
+            tipo={posts[i].tipo}
+            imgUrl={posts[i].imgUrl}
+          />
+        );
+      }
+    }
+    return postDetalhesPost;
+  };
 }
+export default MainContent;

@@ -1,7 +1,7 @@
 const posts = [
   {
     id: 1,
-    tipo: "Paisagem",
+    tipo: "paisagem",
     imgUrl:
       "https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
   },
