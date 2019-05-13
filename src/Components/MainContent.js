@@ -17,26 +17,7 @@ export class MainContent extends React.Component {
     console.log("Body");
     console.log(this.state);
     if (this.props.filter === "" && this.state.allPosts) {
-      return (
-        <main>
-          <div>
-            <div class="custom-select">
-              <select>
-                <option>Post Por Pagina:</option>
-                <option>5</option>
-                <option>10</option>
-                <option>15</option>
-                <option>20</option>
-                <option>25</option>
-                <option>40</option>
-              </select>
-              {this.postPosts()}
-            </div>
-            <br />
-            <Moldura />
-          </div>
-        </main>
-      );
+      return <div className="body">{this.postPosts()}</div>;
     } else if (this.state.allPosts) {
       return <div className="body"> {this.postTipo(this.props.filter)} </div>;
     } else {
@@ -59,7 +40,7 @@ export class MainContent extends React.Component {
   };
 
   //função para ir buscar os valores ao ficheiro JSON
-  //cria um novo array de objectos <Post/>
+  //cria um novo array de objectos <Moldura/>
   postPosts = () => {
     const postComponent = posts.map(post => (
       <Moldura
