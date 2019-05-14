@@ -9,7 +9,7 @@ export class Header extends React.Component {
         </a>
         <a href="#news">Feed</a>
         <a href="#contact">Perfil</a>
-        <a href="#about" className="right">
+        <a href="#about" class="right">
           Definições
         </a>
 
@@ -21,14 +21,8 @@ export class Header extends React.Component {
           type="text"
           id="searchBar"
           placeholder="Search"
+          onKeyPress={this.props.filter}
         />
-        <button
-          className="btn-search"
-          type="button"
-          onClick={this.props.filter}
-        >
-          🔎
-        </button>
       </header>
     );
   }

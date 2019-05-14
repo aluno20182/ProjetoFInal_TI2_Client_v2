@@ -19,7 +19,7 @@ body {
   font-size: 50px;
 }
 
-/*input[type="text"] {
+input[type="text"] {
   width: 130px;
   box-sizing: border-box;
   border: 2px solid #ccc;
@@ -35,7 +35,15 @@ body {
 
 input[type="text"]:focus {
   width: 50%;
-}*/
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media input and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
 
 .large-header {
   background-position: center;
