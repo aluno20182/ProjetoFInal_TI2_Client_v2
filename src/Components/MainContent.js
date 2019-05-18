@@ -17,9 +17,14 @@ export class MainContent extends React.Component {
     console.log("Body");
     console.log(this.state);
     if (this.props.filter === "" && this.state.allPosts) {
-      return <div className="body">{this.postPosts()}</div>;
+      return <div className="body MainContent">{this.postPosts()}</div>;
     } else if (this.state.allPosts) {
-      return <div className="body"> {this.postTipo(this.props.filter)} </div>;
+      return (
+        <div className="body MainContent">
+          {" "}
+          {this.postTipo(this.props.filter)}{" "}
+        </div>
+      );
     } else {
       return <div className="body">{this.postDetail(this.state.idPost)}</div>;
     }

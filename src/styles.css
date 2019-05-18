@@ -6,6 +6,10 @@ body {
   box-sizing: border-box;
 }
 
+.tipo {
+  color: white;
+}
+
 /* Header/logo Title */
 .header {
   padding: 80px;
@@ -21,6 +25,9 @@ body {
 
 input[type="text"] {
   width: 130px;
+  display: block;
+  margin: 0 auto;
+  text-align: left;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
@@ -29,7 +36,7 @@ input[type="text"] {
   background-position: 10px 10px;
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
 
@@ -107,65 +114,47 @@ input[type="text"]:focus {
   color: white;
 }
 
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
-}
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
+.MainContent {
+  margin: 5px 5px;
+  column-gap: 8px;
 }
 
-/* Create four equal columns that sits next to each other */
-.column {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
-.column .image {
-  margin-top: 8px;
-  vertical-align: middle;
-}
-.column:hover .image {
+.image:hover {
   opacity: 0.3;
   cursor: pointer;
+  transition: 0.4s ease;
 }
 
-.column:hover .middle {
-  opacity: 1;
-}
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
+/*Responsive screen*/
+/* large screens */
+@media only screen and (min-width: 1024px) {
+  .MainContent {
+    column-count: 4;
   }
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
+/* medium-sized screens */
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .MainContent {
+    column-count: 3;
   }
 }
 
-.footer {
-  background-color: #8da9c4;
-  text-align: center;
-  padding: 1px;
+/* small screens */
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+  .MainContent {
+    column-count: 2;
+  }
 }
+
+/* Selecionar o numero de paginas por ecrã*/
 
 .select-page {
   text-align: center;
@@ -192,20 +181,11 @@ input[type="text"]:focus {
   color: white;
 }
 
+/* Escolher o numero de paginas*/
+
 .custom-select {
   position: static;
   text-align: right;
-
-  /*text-align: center;
-  background-color: #333;
-  border: none;
-  color: white;
-  padding: 15px 20px;
-  text-align: center;
-  text-decoration: none;
-
-  margin: 4px 2px;
-  */
 }
 
 .custom-select select {
@@ -217,14 +197,4 @@ input[type="text"]:focus {
   border: none;
   font-size: 15px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-}
-
-.image {
-  opacity: 0, 5;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: 0.5s ease;
-  backface-visibility: hidden;
-  border-radius: 4px;
 }

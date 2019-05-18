@@ -1,77 +1,77 @@
 const posts = [
   {
     id: 1,
-    tipo: "paisagem",
+    tipo: "natureza",
     imgUrl:
       "https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
   },
   {
     id: 2,
-    tipo: "",
+    tipo: "paisagem",
     imgUrl:
       "https://www.aboutnewzealand.com/wp-content/uploads/2017/06/Hackett-Ledge-Bungy.jpg"
   },
   {
     id: 3,
-    tipo: "monumentos",
+    tipo: "natureza",
     imgUrl:
       "http://info.annimaddaloni.de/wp-content/uploads/2018/10/Lake_Mountains_Winter_438866.jpg"
   },
   {
     id: 4,
-    tipo: "",
+    tipo: "monumento",
     imgUrl: "https://thebig.co/images/blogs/vertical_panorama02.jpg"
   },
   {
     id: 5,
-    tipo: "",
+    tipo: "natureza",
     imgUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_UVkBN5Wr0cZI6NtQZTWDIfV-DL8WWUkSs1YnLPJY3NSVixBw"
   },
   {
     id: 6,
-    tipo: "",
+    tipo: "paisagem",
     imgUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnqfq_kvfecfDCdByGeVyG4Vk4th56dk-Yoqb9V2UKzrEGg1fKwg"
   },
   {
     id: 7,
-    tipo: "",
+    tipo: "natureza",
     imgUrl:
       "https://images.unsplash.com/photo-1469827160215-9d29e96e72f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
   },
   {
     id: 8,
-    tipo: "",
+    tipo: "natureza",
     imgUrl:
       "https://cdn-images-1.medium.com/max/2400/1*Yd2JS7Jo7W6DHf6VBmGnIg.jpeg"
   },
   {
     id: 9,
-    tipo: "",
+    tipo: "natureza",
     imgUrl:
       "https://www.cpre.org.uk/media/k2/items/cache/72700a14a2a02b35fe25ed088f8895bc_M.jpg"
   },
   {
     id: 10,
-    tipo: "",
+    tipo: "paisagem",
     imgUrl:
       "https://www.geniusjourney.com/pictures/i6/fn/i6fnoc4e7d3290b07sb3/New_Zealand-Tauranga_3.jpg"
   },
   {
     id: 11,
-    tipo: "",
+    tipo: "veiculo",
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/commons/9/91/F-15_vertical_deploy.jpg"
   },
   {
     id: 12,
-    tipo: "",
+    tipo: "natureza",
     imgUrl: "https://www.w3schools.com/w3images/rocks.jpg"
   },
   {
     id: 13,
-    tipo: "",
+    tipo: "natureza",
     imgUrl:
       "https://learn.zoner.com/wp-content/uploads/2018/08/landscape-photography-at-every-hour-part-ii-photographing-landscapes-in-rain-or-shine-683x390.jpg"
   },
