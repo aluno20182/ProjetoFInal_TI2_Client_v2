@@ -9,6 +9,7 @@ export class Detalhes extends React.Component {
           alt={this.props.tipo}
           onClick={() => this.props.return()}
           src={this.props.imgUrl}
+          class="imageDetail"
         />
         <div style={{ float: "left" }}>
           <button type="buton" class="MyButton">
