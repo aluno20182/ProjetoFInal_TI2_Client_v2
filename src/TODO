@@ -1,0 +1,22 @@
+Coisas que precisam de ser feitas:
+
+-Completar na pagina dos posts:
+  Utilizador que criou o post
+  Data de publicação do post
+  Número de likes
+  Número de comentários
+
+- Completar a pagina de detalhes:
+  Utilizador que criou o post
+  Data de publicação do post
+  Legenda
+  Número de likes
+  Comentários, mostrando para cada um:
+    Utilizador
+    Data de publicação do comentário
+    Conteúdos do comentário
+
+- API:
+  - 
+
+  *Seacrhbar 
