@@ -10,13 +10,20 @@ export class Moldura extends React.Component {
   render() {
     return (
       <div class="moldura">
-        {/*<h3 class="tipo">Tipo: {this.props.tipo}</h3>*/}
-        <img
-          class="image"
-          alt={this.props.tipo}
-          src={this.props.imgUrl}
-          onClick={() => this.props.show(this.props.postId)}
-        />
+        <div class="container">
+          {/*<h3 class="tipo">Tipo: {this.props.tipo}</h3>*/}
+          <img
+            class="image"
+            alt={this.props.tipo}
+            src={this.props.imgUrl}
+            onClick={() => this.props.show(this.props.postId)}
+          />
+          <div class="overlay">
+            <p>🖍 {this.props.autor} Ricardo</p>
+            <p>❤ {this.props.likes}</p>
+            <div>{this.props.Comments} </div>
+          </div>
+        </div>
       </div>
     );
   }

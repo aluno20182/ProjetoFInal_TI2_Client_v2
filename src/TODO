@@ -19,4 +19,10 @@ Coisas que precisam de ser feitas:
 - API:
   - 
 
-  *Seacrhbar 
+  *Seacrhbar
+  
+  
+Problema do search bar:
+
+ele assume como enter sempre que clico numa tecla,ou seja, "paisagem"
+procura o "p", "a", "i", ... e só aparece resultados se carregar em qq tecla em seguida do "m"

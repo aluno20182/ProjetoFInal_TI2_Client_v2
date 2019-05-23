@@ -2,10 +2,12 @@ const posts = [
   {
     id: 1,
     tipo: "natureza",
+    autor: "Ricardo",
     imgUrl:
       "https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+    likes: "35",
     Comments: null,
-    likes: 35
+    data: "14/02/2019"
   },
   {
     id: 2,

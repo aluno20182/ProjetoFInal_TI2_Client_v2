@@ -17,7 +17,6 @@ export class Header extends React.Component {
       <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4" />
     </video>*/}
         <input
-          className="searchBar"
           type="text"
           id="searchBar"
           placeholder="Search"
