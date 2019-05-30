@@ -20,7 +20,7 @@ export class Header extends React.Component {
           type="text"
           id="searchBar"
           placeholder="Search"
-          onKeyPress={this.props.filter}
+          onChange={this.props.filter}
         />
       </header>
     );
