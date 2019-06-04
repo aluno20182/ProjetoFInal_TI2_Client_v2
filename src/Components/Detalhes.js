@@ -1,6 +1,25 @@
 import React from "react";
 
 export class Detalhes extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      newCommentText: ""
+    };
+  }
+
+  handleSubmit(evt) {
+    evt.preventDefault();
+
+    this.props.onNewComment(this.state.newCommentText);
+
+    this.setState({ newCommentText: "" });
+  }
+
+  handleNewCommentTextChange(evt) {
+    this.setState({ newCommentText: evt.target.value });
+  }
   render() {
     return (
       <div class="detalhes">
@@ -18,6 +37,21 @@ export class Detalhes extends React.Component {
           <button type="buton" class="MyButton">
             🤲
           </button>
+        </div>
+        <div>
+          <form onSubmit={evt => this.handleSubmit(evt)}>
+            <input
+              type="text"
+              value={this.state.newComment}
+              onChange={evt => this.handleNewCommentTextChange(evt)}
+              required
+            />
+            <button type="submit">
+              <span role="img" aria-label="Adicionar">
+                Comentar
+              </span>
+            </button>
+          </form>
         </div>
       </div>
     );
