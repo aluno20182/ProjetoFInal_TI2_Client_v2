@@ -4,7 +4,7 @@ export class Header extends React.Component {
   render() {
     return (
       <header className="navbar">
-        <a href="#home" className="active">
+        <a href="https://uuo5k.codesandbox.io/" className="active">
           Home
         </a>
         <a href="#news">Feed</a>
