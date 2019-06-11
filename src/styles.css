@@ -8,8 +8,8 @@ body {
 
 .detalhes {
   background-color: #123f72;
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   object-fit: cover;
   border-radius: 4px;
   display: block;
@@ -141,7 +141,6 @@ input[type="text"]:focus {
 
 .imageDetail {
   width: 50%;
-  height: 50%;
   object-fit: cover;
   border-radius: 4px;
   display: block;
