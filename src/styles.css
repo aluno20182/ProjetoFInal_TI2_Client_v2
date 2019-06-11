@@ -43,6 +43,7 @@ body {
 }
 
 input[type="text"] {
+  float: right;
   width: 130px;
   display: block;
   margin: 0 auto;
@@ -140,6 +141,7 @@ input[type="text"]:focus {
 
 .imageDetail {
   width: 50%;
+  height: 50%;
   object-fit: cover;
   border-radius: 4px;
   display: block;
@@ -164,6 +166,29 @@ input[type="text"]:focus {
   opacity: 0.3;
   cursor: pointer;
   transition: 0.4s ease;
+}
+
+.container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.container:hover .overlay {
+  opacity: 1;
 }
 
 /*Responsive screen*/
@@ -233,6 +258,7 @@ input[type="text"]:focus {
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
 }
 
+/**************PAGINA DETALHES****************/
 .MyButton {
   -moz-box-shadow: inset 1px -7px 13px -50px #23395e;
   -webkit-box-shadow: inset 1px -7px 13px -50px #23395e;
