@@ -58,21 +58,22 @@ export class Detalhes extends React.Component {
               </form>
             </div>
           </div>
-        <img
-          alt={this.props.tipo}
-          onClick={() => this.props.return()}
-          src={this.props.imgUrl}
-          class="imageDetail"
-        />
-        <div>{this.props.likes}</div>
+          <img
+            alt={this.props.tipo}
+            onClick={() => this.props.return()}
+            src={this.props.imgUrl}
+            class="imageDetail"
+          />
+          <div>{this.props.likes}</div>
 
-        <div style={{ float: "left" }}>
-          <button type="buton" class="MyButton">
-            👍
-          </button>
-          <button type="buton" class="MyButton">
-            🤲
-          </button>
+          <div style={{ float: "left" }}>
+            <button type="buton" class="MyButton">
+              👍
+            </button>
+            <button type="buton" class="MyButton">
+              🤲
+            </button>
+          </div>
         </div>
       </div>
     );
