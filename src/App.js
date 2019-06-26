@@ -13,19 +13,19 @@ export class App extends React.Component {
   }
   render() {
     return (
-      <div class="demo">
-        <div class="content">
-          <div id="large-header" class="large-header">
+      <div className="demo">
+        <div className="content">
+          <div id="large-header" className="large-header">
             <Header filter={this.search} />
-            <div class="header">
-              <h1 class="main-title">Tomblr</h1>
+            <div className="header">
+              <h1 className="main-title">Tomblr</h1>
             </div>
             <br />
             <br />
             <MainContent filter={this.state.filter} />
             <br />
             <br />
-            <div class="select-page">
+            <div className="select-page">
               <a href="#pag1"> 1 </a>
               <a href="#pag2"> 2 </a>
               <a href="#pag3"> 3 </a>
