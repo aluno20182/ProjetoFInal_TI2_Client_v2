@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer class="footer">
+    <footer className="footer">
       <h3>TI2 - IPT - 2018/2019</h3>
     </footer>
   );

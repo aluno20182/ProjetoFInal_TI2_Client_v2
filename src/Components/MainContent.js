@@ -1,8 +1,9 @@
 import React from "react";
 
 import { Moldura } from "./Moldura.js";
-import posts from "./Posts.js";
+
 import { Detalhes } from "./Detalhes.js";
+import { apiBase } from "../api";
 
 export class MainContent extends React.Component {
   constructor(props) {
@@ -47,12 +48,12 @@ export class MainContent extends React.Component {
   //função para ir buscar os valores ao ficheiro JSON
   //cria um novo array de objectos <Moldura/>
   postPosts = () => {
-    const postComponent = posts.map(post => (
+    const postComponent = this.props.posts.map(post => (
       <Moldura
         key={post.id}
         postId={post.id}
         author={post.author}
-        imgUrl={post.imgUrl}
+        imgUrl={apiBase + "api/posts/" + post.id + "/image"}
         show={id => this.showPost(id)}
       />
     ));
@@ -62,14 +63,14 @@ export class MainContent extends React.Component {
   //função que vai buscar apenas aqueles selecionados
   postTipo = filter => {
     const postTipoComponent = [];
-    for (let i = 0; i < posts.length; i++) {
-      if (posts[i].tipo === filter) {
+    for (let i = 0; i < this.props.posts.length; i++) {
+      if (this.props.posts[i].tipo === filter) {
         postTipoComponent.push(
           <Moldura
-            key={posts[i].id}
-            postId={posts[i].id}
-            tipo={posts[i].tipo}
-            imgUrl={posts[i].imgUrl}
+            key={this.props.posts[i].id}
+            postId={this.props.posts[i].id}
+            tipo={this.props.posts[i].tipo}
+            imgUrl={apiBase + "api/posts/" + this.props.posts[i].id + "/image"}
             show={id => this.showPost(id)}
           />
         );
@@ -81,15 +82,15 @@ export class MainContent extends React.Component {
   //função que cria uma view para cada um dos posts depois de clickada
   postDetail = id => {
     const postDetalhesPost = [];
-    for (let i = 0; i < posts.length; i++) {
-      if (posts[i].id === id) {
+    for (let i = 0; i < this.props.posts.length; i++) {
+      if (this.props.posts[i].id === id) {
         postDetalhesPost.push(
           <Detalhes
             return={() => this.showPosts()}
-            key={posts[i].id}
-            postId={posts[i].id}
-            tipo={posts[i].tipo}
-            imgUrl={posts[i].imgUrl}
+            key={this.props.posts[i].id}
+            postId={this.props.posts[i].id}
+            tipo={this.props.posts[i].tipo}
+            imgUrl={apiBase + "api/posts/" + this.props.posts[i].id + "/image"}
           />
         );
       }

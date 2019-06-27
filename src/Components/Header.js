@@ -9,7 +9,7 @@ export class Header extends React.Component {
         </a>
         <a href="#news">Feed</a>
         <a href="#contact">Perfil</a>
-        <a href="#about" class="right">
+        <a href="#about" className="right">
           Definições
         </a>
 
@@ -20,11 +20,15 @@ export class Header extends React.Component {
           type="text"
           id="searchBar"
           placeholder="Search"
-          onChange={this.props.filter}
+          onChange={this.handleSerachChange}
         />
       </header>
     );
   }
+
+  handleSerachChange = evt => {
+    this.props.filter(evt.target.value);
+  };
 }
 
 export default Header;
