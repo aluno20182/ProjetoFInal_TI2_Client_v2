@@ -4,7 +4,7 @@ import "./styles.css";
 import { Header } from "./Components/Header.js";
 import { MainContent } from "./Components/MainContent.js";
 import Footer from "./Components/Footer.js";
-import { getPosts, apiBase } from "./api";
+import { getPosts } from "./api";
 
 export class App extends React.Component {
   constructor(props) {

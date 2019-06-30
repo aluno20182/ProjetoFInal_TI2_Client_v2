@@ -52,8 +52,9 @@ export class MainContent extends React.Component {
       <Moldura
         key={post.id}
         postId={post.id}
-        author={post.author}
+        author={post.user.name}
         imgUrl={apiBase + "api/posts/" + post.id + "/image"}
+        likes={post.likes}
         show={id => this.showPost(id)}
       />
     ));
