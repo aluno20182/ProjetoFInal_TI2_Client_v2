@@ -1,4 +1,6 @@
 import React from "react";
+import {apiBase} from "../api"
+
 
 export class Moldura extends React.Component {
   constructor(props) {
@@ -9,17 +11,17 @@ export class Moldura extends React.Component {
 
   render() {
     return (
-      <div class="moldura">
-        <div class="container">
+      <div className="moldura">
+        <div className="container">
           {/*<h3 class="tipo">Tipo: {this.props.tipo}</h3>*/}
           <img
-            class="image"
+            className="image"
             alt={this.props.author}
             src={this.props.imgUrl}
             onClick={() => this.props.show(this.props.postId)}
           />
-          <div class="overlay">
-            <p>🖍 {this.props.user}</p>
+          <div className="overlay">
+            <p>🖍 {this.props.author}</p>
             <p>❤ {this.props.likes}</p>
             <div>{this.props.Comments} </div>
           </div>

@@ -48,8 +48,10 @@ export class MainContent extends React.Component {
   //função para ir buscar os valores ao ficheiro JSON
   //cria um novo array de objectos <Moldura/>
   postPosts = () => {
+    console.log(this.props.posts);
     const postComponent = this.props.posts.map(post => (
       <Moldura
+      post={this.state.post}
         key={post.id}
         postId={post.id}
         author={post.user.name}
@@ -63,6 +65,7 @@ export class MainContent extends React.Component {
 
   //função que vai buscar apenas aqueles selecionados
   postTipo = filter => {
+    console.log(this.props.posts);
     const postTipoComponent = [];
     for (let i = 0; i < this.props.posts.length; i++) {
       if (this.props.posts[i].tipo === filter) {
@@ -71,6 +74,8 @@ export class MainContent extends React.Component {
             key={this.props.posts[i].id}
             postId={this.props.posts[i].id}
             tipo={this.props.posts[i].tipo}
+            likes={this.props.posts[i].likes}
+            author={this.props.posts[i].user.name}
             imgUrl={apiBase + "api/posts/" + this.props.posts[i].id + "/image"}
             show={id => this.showPost(id)}
           />
@@ -90,7 +95,9 @@ export class MainContent extends React.Component {
             return={() => this.showPosts()}
             key={this.props.posts[i].id}
             postId={this.props.posts[i].id}
-            tipo={this.props.posts[i].tipo}
+            tipo={this.props.posts[i].caption}
+            author={this.props.posts[i].user.name}
+            likes={this.props.posts[i].likes}
             imgUrl={apiBase + "api/posts/" + this.props.posts[i].id + "/image"}
           />
         );
