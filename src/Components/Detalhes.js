@@ -22,27 +22,30 @@ export class Detalhes extends React.Component {
   }
   render() {
     return (
-      <div class="detalhes">
-        <h3 class="tipo">Tipo: {this.props.tipo}</h3>
-        <div class="div5">
+      <div className="detalhes">
+        <h3 className="tipo">Caption: {this.props.tipo}</h3>
+        <h3 className="tipo">Autor: {this.props.author}</h3>
+        <div className="div5">
           <img
             alt={this.props.tipo}
             onClick={() => this.props.return()}
             src={this.props.imgUrl}
-            class="imageDetail"
+            className="imageDetail"
           />
-          <div class="div1">
-            <div class="div2">
-              <button type="buton" class="MyButton">
-                👍
-              </button>
-              <button type="buton" class="MyButton">
+          <div className="div1">
+            <div className="div2">
+              <button type="button" className="MyButton">
+                ❤
+              </button>{" "}
+              <h3 className="nLikes">Numero de likes: {this.props.likes}</h3>
+              <button type="button" className="MyButton">
                 🤲
               </button>
+              <h3 className="nLikes"> Partilha </h3>
             </div>
-            <div class="div3">
+            <div className="div3">
               <form onSubmit={evt => this.handleSubmit(evt)}>
-                <div class="div4">
+                <div className="div4">
                   <input
                     type="text"
                     value={this.state.newComment}
@@ -58,9 +61,8 @@ export class Detalhes extends React.Component {
               </form>
             </div>
           </div>
-          
-          </div>
         </div>
+      </div>
     );
   }
 }

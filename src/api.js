@@ -1,66 +1,47 @@
-import React from "react";
-import ReactDOM from "react-dom";
+export const apiBase = "https://ipt-ti2-iptgram.azurewebsites.net/";
 
-import "styles.css";
+export function getPosts(query) {
+  let termosPesquisa = new URLSearchParams();
 
-let apiBase = "https://ipt-ti2-iptgram.azurewebsites.net";
+  if (query) {
+    termosPesquisa.set("query", query);
+  }
 
-class App extends React.Component {
-    constructor(props) {
-      super(props);
-  
-      this.state = {
-        posts: [],
-        isLoading: true
-      };
+  return fetch(apiBase + "api/posts?" + termosPesquisa.toString(), {
+    method: "GET"
+  }).then(resposta => {
+    console.warn(resposta);
+    if (resposta.status === 200) {
+      return resposta.json();
+    } else {
+      return Promise.reject(resposta);
     }
-    async componentDidMount() {
-        try {
-          let postsFromApiResponse = await fetch(apiBase + "/api/posts", {
-            headers: {
-              Accept: "application/json"
-            }
-          });
-    
-          if (postsFromApiResponse.ok) {
-            let postsFromApi = await postsFromApiResponse.json();
-    
-            console.log(postsFromApi);
-    
-            this.setState({
-              posts: postsFromApi,
-              isLoading: false
-            });
-          } else {
-            let text = await postsFromApiResponse.text();
-    
-            throw new Error(text);
-          }
-        } catch (e) {
-          console.error("Erro ao obter os posts", e);
-        }
-      }
-    
-      render() {
-        let posts = this.state.posts;
-    
-        let aux = [];
-    
-        for (let post of posts) {
-          aux.push(
-            <div key={post.id}>
-              <img
-                src={apiBase + "/api/posts/" + post.id + "/image"}
-                alt={post.caption}
-              />
-              <p>{post.caption}</p>
-            </div>
-          );
-        }
-    
-        return <div>{aux}</div>;
-      }
-    }
-    
-    const rootElement = document.getElementById("root");
-    ReactDOM.render(<App />, rootElement);
+  });
+}
+
+/*export async function addTodo(description) {
+  let tarefa = {
+    description: description
+  };
+
+  let resposta = await fetch(apiBase + "/api/posts", {
+    method: "POST",
+    headers: {
+      // vou enviar json
+      "Content-Type": "application/json",
+      // quero json
+      Accept: "application/json"
+    },
+    body: JSON.stringify(tarefa)
+  });
+
+  if (resposta.ok) {
+    let novaTarefa = await resposta.json();
+
+    return novaTarefa;
+  } else {
+    let erro = await resposta.json();
+
+    throw erro;
+  }
+}*/

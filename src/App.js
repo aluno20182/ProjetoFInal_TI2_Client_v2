@@ -4,14 +4,49 @@ import "./styles.css";
 import { Header } from "./Components/Header.js";
 import { MainContent } from "./Components/MainContent.js";
 import Footer from "./Components/Footer.js";
+import { getPosts } from "./api";
 
 export class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { filter: "" };
-    this.search = this.search.bind(this); //função que é passada como prop para actualizar o estado do compoente pai
+    this.state = {
+      posts: [],
+      isLoading: true
+    };
+    //função que é passada como prop para actualizar o estado do compoente pai
+    this.search = this.search.bind(this);
   }
+
+  async componentDidMount() {
+    try {
+      let postsFromApi = await getPosts();
+
+      this.setState({
+        posts: postsFromApi,
+        isLoading: false
+      });
+    } catch (e) {
+      console.error("Erro ao ler os posts", e);
+    }
+  }
+
   render() {
+    let posts = this.state.posts;
+
+    // let aux = [];
+
+    // for (let post of posts) {
+    //   aux.push(
+    //     <div key={post.id}>
+    //       <img
+    //         src={apiBase + "api/posts/" + post.id + "/image"}
+    //         alt={post.caption}
+    //       />
+    //       <p>{post.caption}</p>
+    //     </div>
+    //   );
+    // }
+
     return (
       <div className="demo">
         <div className="content">
@@ -22,7 +57,7 @@ export class App extends React.Component {
             </div>
             <br />
             <br />
-            <MainContent filter={this.state.filter} />
+            <MainContent posts={posts} filter={this.state.filter} />
             <br />
             <br />
             <div className="select-page">
@@ -42,8 +77,17 @@ export class App extends React.Component {
       </div>
     );
   }
-  search() {
-    let searchTxt = document.getElementById("searchBar").value;
-    this.setState({ filter: searchTxt });
+  async search(searchTxt) {
+    // let searchTxt = document.getElementById("searchBar").value;
+    try {
+      let postsFromApi = await getPosts(searchTxt);
+
+      this.setState({
+        posts: postsFromApi,
+        isLoading: false
+      });
+    } catch (e) {
+      console.error("Erro ao ler os posts", e);
+    }
   }
 }
