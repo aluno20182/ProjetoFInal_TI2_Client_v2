@@ -12,10 +12,6 @@ export class Header extends React.Component {
         <a href="#about" className="right">
           Definições
         </a>
-
-        {/*<video class="video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-      <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4" />
-    </video>*/}
         <input
           type="text"
           id="searchBar"
