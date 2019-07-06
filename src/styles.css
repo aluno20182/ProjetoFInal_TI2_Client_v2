@@ -35,6 +35,7 @@ body {
 
 .commentBox{
   width: 50%;
+  height: 100%;
   font-family: Gill Sans, sans-serif;
   font-size: 17px;
 }
@@ -156,11 +157,7 @@ input[type="text"]:focus {
   color: black;
 }
 
-/* Active/current link */
-.navbar a.active {
-  background-color: #12305b;
-  color: white;
-}
+
 
 .MainContent {
   margin: 5px 5px;
@@ -267,12 +264,44 @@ input[type="text"]:focus {
   cursor: pointer;
   color: #ffffff;
   font-size: 15px;
+  padding: 7px 13px;
+  text-decoration: none;
+  text-shadow: 0px 0px 0px #263666;
+  margin-right: 3px;
+  margin-top: 10px;
+  height: 40px;
+}
+
+.MyButtonC{
+  -moz-box-shadow: inset 1px -7px 13px -50px #23395e;
+  -webkit-box-shadow: inset 1px -7px 13px -50px #23395e;
+  box-shadow: inset 1px -7px 13px -50px #23395e;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #2e466e),
+    color-stop(1, #415989)
+  );
+  background: -moz-linear-gradient(top, #2e466e 5%, #415989 100%);
+  background: -webkit-linear-gradient(top, #2e466e 5%, #415989 100%);
+  background: -o-linear-gradient(top, #2e466e 5%, #415989 100%);
+  background: -ms-linear-gradient(top, #2e466e 5%, #415989 100%);
+  background: linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e466e', endColorstr='#415989',GradientType=0);
+  background-color: #2e466e;
+  border: 2px solid #1f2f47;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
   padding: 13px 13px;
   text-decoration: none;
   text-shadow: 0px 0px 0px #263666;
   margin-right: 3px;
 }
-.MyButton:hover {
+
+.MyButton:hover, .MyButtonC:hover{
   background: -webkit-gradient(
     linear,
     left top,
@@ -288,7 +317,7 @@ input[type="text"]:focus {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#415989', endColorstr='#2e466e',GradientType=0);
   background-color: #415989;
 }
-.MyButton:active {
+.MyButton:active, .MyButtonC:active {
   position: relative;
   top: 1px;
 }
