@@ -58,6 +58,7 @@ export class MainContent extends React.Component {
         imgUrl={apiBase + "api/posts/" + post.id + "/image"}
         likes={post.likes}
         show={id => this.showPost(id)}
+        comments={post.comments}
       />
     ));
     return postComponent;
@@ -77,6 +78,7 @@ export class MainContent extends React.Component {
             likes={this.props.posts[i].likes}
             postedAt={this.props.posts[i].postedAt}
             author={this.props.posts[i].user.name}
+            comments={this.props.posts[i].comments}
             imgUrl={apiBase + "api/posts/" + this.props.posts[i].id + "/image"}
             show={id => this.showPost(id)}
           />

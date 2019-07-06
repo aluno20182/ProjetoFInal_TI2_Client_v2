@@ -28,6 +28,7 @@ export class Moldura extends React.Component {
                 this.props.postedAt.indexOf("T")
               )}
             </p>
+            <p>✍{this.props.comments}</p>
             <div>{this.props.Comments} </div>
           </div>
         </div>

@@ -19,6 +19,22 @@ export function getPosts(query) {
   });
 }
 
+export function getComments(id){
+
+  return fetch(apiBase + "api/posts/"+id+"/comments", {
+    method: "GET"
+  }).then(resposta => {
+    console.warn(resposta);
+    if (resposta.status === 200) {
+      return resposta.json();
+    } else {
+      return Promise.reject(resposta);
+    } 
+   });
+
+ }
+
+
 /*export async function addTodo(description) {
   let tarefa = {
     description: description
