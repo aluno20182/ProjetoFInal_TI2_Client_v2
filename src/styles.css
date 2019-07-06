@@ -21,7 +21,7 @@ body {
 }
 
 .nLikes{
-  color:#779fc4;
+  color:#ffffff;
 }
 
 .tipo {
@@ -35,7 +35,8 @@ body {
 
 .commentBox{
   width: 50%;
-
+  font-family: Gill Sans, sans-serif;
+  font-size: 17px;
 }
 
 .tituloComment{
@@ -240,50 +241,7 @@ input[type="text"]:focus {
   }
 }
 
-/* Selecionar o numero de paginas por ecrã*/
 
-.select-page {
-  text-align: center;
-}
-
-.select-page a {
-  background-color: #12305b;
-  border: none;
-  color: white;
-  padding: 15px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.select-page a:hover {
-  background-color: #123f72;
-}
-
-.select-page a.active {
-  background-color: #8da9c4;
-  color: white;
-}
-
-/* Escolher o numero de paginas*/
-
-.custom-select {
-  position: static;
-  text-align: right;
-}
-
-.custom-select select {
-  background-color: #12305b;
-  color: #fff;
-  padding: 10px;
-  width: 200px;
-  height: 40px;
-  border: none;
-  font-size: 15px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-}
 
 /**************PAGINA DETALHES****************/
 .MyButton {
@@ -339,7 +297,7 @@ input[type="text"]:focus {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 10px;
-  outline: #ffffff
+  outline: #ffffff;
 }
 
 .div2 {
@@ -366,4 +324,8 @@ input[type="text"]:focus {
   flex-direction: column;
   justify-content: center;
   align-self: center;
+}
+
+.tipo, .tituloComment{
+  color: #ffffff;
 }
