@@ -40,7 +40,7 @@ export class Detalhes extends React.Component {
   render() {
     var comentarios=[];
     if(this.state.comments.length > 0) comentarios= this.state.comments.map(function(comentario) { 
-      return <p>{comentario.user.name} : {comentario.text}</p>;
+      return <p className="comentarios">{comentario.user.name} : {comentario.text}</p>;
      // return <p>{comentario.text}</p>;
      // return <p>{comentario.postedAt}</p>;
     })
@@ -48,7 +48,7 @@ export class Detalhes extends React.Component {
       <div className="detalhes">
         <h3 className="tipo">Caption: {this.props.tipo}</h3>
         <h3 className="tipo">Autor : {this.props.author}</h3>
-        <div className="div5">
+        <div className="div5"> 
           <img
             alt={this.props.tipo}
             onClick={() => this.props.return()}
@@ -70,6 +70,7 @@ export class Detalhes extends React.Component {
             <form onSubmit={evt => this.handleSubmit(evt)}>
                 <div className="div4">
                   <textarea
+                    className="commentBox"
                     type="text"
                     value={this.state.newComment}
                     onChange={evt => this.handleNewCommentTextChange(evt)}
@@ -83,7 +84,7 @@ export class Detalhes extends React.Component {
                 </div>
               </form>
               <div>
-                <h3>Comentários: <p>{comentarios}</p> </h3>
+                <h3 className="tituloComment">Comentários: <p>{comentarios}</p> </h3>
               </div>
           </div>
         </div>

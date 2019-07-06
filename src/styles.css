@@ -30,7 +30,29 @@ body {
   text-align: center;
   color: #779fc4;
   position: static;
-  border-radius: 4px;
+  font-family: Verdana;
+}
+
+.commentBox{
+  width: 50%;
+
+}
+
+.tituloComment{
+  font-size: 20px;
+  padding:5px;
+  text-align: left;
+  color: #779fc4;
+  position: static;
+  font-family: Verdana;
+}
+
+.comentarios{
+  font-size: 15px;
+  padding: 5px;
+  text-align: left;
+  color: #779fc4;
+  position: static;
   font-family: Verdana;
 }
 
@@ -334,6 +356,7 @@ input[type="text"]:focus {
 
 .div4 {
   margin-top: 5px;
+  margin-left: 5px;
   display: flex;
   justify-content: center;
 }
