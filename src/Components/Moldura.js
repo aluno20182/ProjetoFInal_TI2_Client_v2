@@ -11,7 +11,6 @@ export class Moldura extends React.Component {
     return (
       <div className="moldura">
         <div className="container">
-          {/*<h3 class="tipo">Tipo: {this.props.tipo}</h3>*/}
           <img
             className="image"
             alt={this.props.author}
@@ -23,13 +22,9 @@ export class Moldura extends React.Component {
             <p>❤ {this.props.likes}</p>
             <p>
               🗓{" "}
-              {this.props.postedAt.substring(
-                0,
-                this.props.postedAt.indexOf("T")
-              )}
+              {this.props.postedAt.substring(0, this.props.postedAt.indexOf("T"))}
             </p>
-            <p>✍{this.props.comments}</p>
-            <div>{this.props.Comments} </div>
+            <p>💻 {this.props.comments}</p>
           </div>
         </div>
       </div>
