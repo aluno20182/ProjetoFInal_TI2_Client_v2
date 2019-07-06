@@ -47,7 +47,7 @@ export class Detalhes extends React.Component {
     return (
       <div className="detalhes">
         <h3 className="tipo">Caption: {this.props.tipo}</h3>
-        <h3 className="tipo">Autor : {this.props.author}</h3>
+        <h3 className="tipo">Autor: {this.props.author}</h3>
         <div className="div5"> 
           <img
             alt={this.props.tipo}
@@ -72,7 +72,7 @@ export class Detalhes extends React.Component {
                     onChange={evt => this.handleNewCommentTextChange(evt)}
                     required
                   />
-                  <button type="submit" className="MyButton">
+                  <button type="submit" className="MyButtonC">
                     <span role="img" aria-label="Adicionar">
                       ▶
                     </span>

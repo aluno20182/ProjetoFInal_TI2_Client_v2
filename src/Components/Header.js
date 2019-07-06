@@ -15,7 +15,7 @@ export class Header extends React.Component {
     return (
       <header className="navbar">
         <a href="#" className="active" onClick={this.out}>
-          Home
+          🏠
         </a>
         <a href="#" className="right" onClick={this.out}>
           Sair

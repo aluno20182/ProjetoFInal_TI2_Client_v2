@@ -14,9 +14,11 @@ export class MainContent extends React.Component {
       idPost: 0
     };
   }
+
   render() {
     console.log("Body");
     console.log(this.state);
+    window.scroll(0,0);
     if (this.props.filter === "" && this.state.allPosts) {
       return <div className="body MainContent">{this.postPosts()}</div>;
     } else if (this.state.allPosts) {
