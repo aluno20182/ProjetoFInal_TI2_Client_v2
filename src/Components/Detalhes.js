@@ -89,4 +89,4 @@ export class Detalhes extends React.Component {
         </div>
     );
   }
-}
+} export default Detalhes;

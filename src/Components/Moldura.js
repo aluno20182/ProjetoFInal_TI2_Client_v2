@@ -35,4 +35,4 @@ export class Moldura extends React.Component {
       </div>
     );
   }
-}
+} export default Moldura;

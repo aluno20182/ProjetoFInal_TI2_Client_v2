@@ -35,29 +35,3 @@ export function getComments(id){
  }
 
 
-/*export async function addTodo(description) {
-  let tarefa = {
-    description: description
-  };
-
-  let resposta = await fetch(apiBase + "/api/posts", {
-    method: "POST",
-    headers: {
-      // vou enviar json
-      "Content-Type": "application/json",
-      // quero json
-      Accept: "application/json"
-    },
-    body: JSON.stringify(tarefa)
-  });
-
-  if (resposta.ok) {
-    let novaTarefa = await resposta.json();
-
-    return novaTarefa;
-  } else {
-    let erro = await resposta.json();
-
-    throw erro;
-  }
-}*/

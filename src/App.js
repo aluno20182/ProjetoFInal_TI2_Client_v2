@@ -90,4 +90,4 @@ export class App extends React.Component {
       console.error("Erro ao ler os posts", e);
     }
   }
-}
+} export default App;
