@@ -1,16 +1,24 @@
 import React from "react";
 
 export class Header extends React.Component {
+  out() {
+    //Redirect
+    window.location = '/';
+  }
+
+  home() {
+    //Redirect
+    window.location = '/posts';
+  }
+
   render() {
     return (
       <header className="navbar">
-        <a href="https://uuo5k.codesandbox.io/" className="active">
+        <a href="#" className="active" onClick={this.out}>
           Home
         </a>
-        <a href="#news">Feed</a>
-        <a href="#contact">Perfil</a>
-        <a href="#about" className="right">
-          Definições
+        <a href="#" className="right" onClick={this.out}>
+          Sair
         </a>
         <input
           type="text"
