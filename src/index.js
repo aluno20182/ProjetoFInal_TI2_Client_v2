@@ -11,13 +11,14 @@ import App from "./App";
 import "./styles.css";
 
 
-ReactDOM.render(<BrowserRouter>
+ReactDOM.render(
+    <BrowserRouter>
         <Switch>
             <Route path="/" exact={true} component={Login} />
-            <Route path="/:id/detalhes" component={Detalhes} />
+            <Route path="/detalhes/:id" component={Detalhes} />
             <Route path="/posts" component={App} />
             {/* Default */}
-            <Route component={Login} />
+            {/*<Route component={Login} />*/}
         </Switch>
     </ BrowserRouter>
     , document.getElementById('root')

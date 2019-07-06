@@ -33,19 +33,6 @@ export class App extends React.Component {
   render() {
     let posts = this.state.posts;
 
-    // let aux = [];
-
-    // for (let post of posts) {
-    //   aux.push(
-    //     <div key={post.id}>
-    //       <img
-    //         src={apiBase + "api/posts/" + post.id + "/image"}
-    //         alt={post.caption}
-    //       />
-    //       <p>{post.caption}</p>
-    //     </div>
-    //   );
-    // }
 
     return (
       <div className="demo">
@@ -60,13 +47,6 @@ export class App extends React.Component {
             <MainContent posts={posts} filter={this.state.filter} />
             <br />
             <br />
-            <div className="select-page">
-              <a href="#pag1"> 1 </a>
-              <a href="#pag2"> 2 </a>
-              <a href="#pag3"> 3 </a>
-              <a href="#pag4"> 4 </a>
-              <a href="#pag5"> 5 </a>
-            </div>
             <br />
             <br />
             <br />
