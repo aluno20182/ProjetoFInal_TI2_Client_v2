@@ -60,10 +60,6 @@ export class Detalhes extends React.Component {
               <button type="button" className="MyButton">
               ❤
               </button> <h3 className="nLikes">Likes: {this.props.likes}</h3>
-              <button type="button" className="MyButton">
-              🤲
-              </button>
-              <h3 className="nLikes" > Partilha </h3>
             </div>
 
             </div>
@@ -76,9 +72,9 @@ export class Detalhes extends React.Component {
                     onChange={evt => this.handleNewCommentTextChange(evt)}
                     required
                   />
-                  <button type="submit" onClick="">
+                  <button type="submit" className="MyButton">
                     <span role="img" aria-label="Adicionar">
-                      Comentar
+                      ▶
                     </span>
                   </button>
                 </div>
