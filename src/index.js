@@ -7,9 +7,7 @@ import Detalhes from './Components/Detalhes';
 import Login from './Components/Login';
 import App from "./App";
 
-
 import "./styles.css";
-
 
 ReactDOM.render(
     <BrowserRouter>
@@ -18,23 +16,10 @@ ReactDOM.render(
             <Route path="/detalhes/:id" component={Detalhes} />
             <Route path="/posts" component={App} />
             {/* Default */}
-            {/*<Route component={Login} />*/}
+            <Route component={Login} />
         </Switch>
     </ BrowserRouter>
     , document.getElementById('root')
 );
-
-
-
-
-
-/*import { App } from "./App.js";
-
-ReactDOM.render(<App />, document.getElementById("root"));
-
-import { Login } from "./Components/Login.js";
-
-ReactDOM.render(<Login />, document.getElementById("root"));*/
-
 
 

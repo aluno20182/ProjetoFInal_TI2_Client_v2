@@ -34,14 +34,12 @@ export class Login extends React.Component {
     let status = response.status;
     switch (status) {
       case 200:
-        //Armazenar o token
-        // sessionStorage.setItem("token", response.headers.get("x-auth-token"));
         //Redirect
         this.setState({ redirect: "/posts" });
         break;
       case 401:
         this.setState({ alertisNotVisible: false });
-        console.log("Errado");
+        alert("Password ou User errado, tente novamente!");
         break;
       default:
         console.log("ah shit, here we go again");
@@ -60,6 +58,7 @@ export class Login extends React.Component {
     return (
       <div class="login-page">
         <div class="form">
+          <h1>LOGIN</h1>
           <form class="login-form" onSubmit={this.handleSubmit}>
             <input
               type="text"
