@@ -1,13 +1,37 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+import Detalhes from './Components/Detalhes';
+import Login from './Components/Login';
+import App from "./App";
+
+
 import "./styles.css";
 
-import { App } from "./App.js";
+
+ReactDOM.render(<BrowserRouter>
+        <Switch>
+            <Route path="/" exact={true} component={Login} />
+            <Route path="/:id/detalhes" component={Detalhes} />
+            <Route path="/posts" component={App} />
+            {/* Default */}
+            <Route component={Login} />
+        </Switch>
+    </ BrowserRouter>
+    , document.getElementById('root')
+);
+
+
+
+
+
+/*import { App } from "./App.js";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
-/*import { Login } from "./Components/Login.js";
+import { Login } from "./Components/Login.js";
 
 ReactDOM.render(<Login />, document.getElementById("root"));*/
 
