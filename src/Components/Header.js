@@ -14,7 +14,7 @@ export class Header extends React.Component {
   render() {
     return (
       <header className="navbar">
-        <a href="#" className="active" onClick={this.out}>
+        <a href="#" className="active" onClick={this.home}>
           🏠
         </a>
         <a href="#" className="right" onClick={this.out}>
@@ -24,11 +24,14 @@ export class Header extends React.Component {
           type="text"
           id="searchBar"
           placeholder="Search"
-          onChange={this.props.filter}
+          onChange={this.handleSerachChange}
         />
       </header>
     );
   }
+  handleSerachChange = evt => {
+    this.props.filter(evt.target.value);
+  };
 }
 
 export default Header;
