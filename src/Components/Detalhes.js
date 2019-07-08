@@ -1,5 +1,5 @@
 import React from "react";
-import { getComments} from "../api"
+import { getComments, addComment} from "../api"
 
 export class Detalhes extends React.Component {
   constructor(props) {
@@ -19,31 +19,47 @@ export class Detalhes extends React.Component {
   async componentDidMount(){
     console.log(this.props.postId);
     let commentsFromApi = await getComments(this.props.postId);
-    this.setState({ comments: commentsFromApi })
-    console.log(commentsFromApi);
-    console.log("Estou aqui");
-    console.log(this.state.comments);
-
+    this.setState({ comments: commentsFromApi });
   }
 
-  handleSubmit(evt) {
+  async handleSubmit(evt) {
     evt.preventDefault();
 
-    this.props.onNewComment(this.state.newCommentText);
-
+    var novoComentario = await this.handleNewComment(this.state.newCommentText);
+    console.log(novoComentario);
     this.setState({ newCommentText: "" });
+
   }
+
+  async handleNewComment(newCommentText) {
+    try {
+      let novoComentario = await addComment(this.props.postId, newCommentText);
+
+      this.setState({
+        // Criar um novo array a partir do anterior
+        // (...), e adicionar a nova tarefa
+        // a esse novo array.
+        comments: [...this.state.comments, novoComentario]
+      });
+    } catch (e) {
+      console.error("Erro ao inserir", e);
+    }
+  }
+
 
   handleNewCommentTextChange(evt) {
     this.setState({ newCommentText: evt.target.value });
   }
+
+
+
+
   render() {
     var comentarios=[];
     if(this.state.comments.length > 0) comentarios= this.state.comments.map(function(comentario) { 
-      return <p className="comentarios">{comentario.user.name} : {comentario.text}</p>;
-     // return <p>{comentario.text}</p>;
-     // return <p>{comentario.postedAt}</p>;
+      return <p className="comentarios">{comentario.user.name} ({comentario.postedAt.slice(0, 10)}) : {comentario.text}</p>;
     })
+    
     return (
       <div className="detalhes">
         <h3 className="tipo">Caption: {this.props.tipo}</h3>
@@ -68,7 +84,7 @@ export class Detalhes extends React.Component {
                   <textarea
                     className="commentBox"
                     type="text"
-                    value={this.state.newComment}
+                    value={this.state.newCommentText}
                     onChange={evt => this.handleNewCommentTextChange(evt)}
                     required
                   />
@@ -80,7 +96,7 @@ export class Detalhes extends React.Component {
                 </div>
               </form>
               <div>
-                <h3 className="tituloComment">Comentários: <p>{comentarios}</p> </h3>
+                <h3 className="tituloComment">Comentários: {comentarios} </h3>
               </div>
           </div>
         </div>

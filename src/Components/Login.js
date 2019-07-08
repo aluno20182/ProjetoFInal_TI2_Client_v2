@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect } from "react-router";
 import "../Login.css";
 
-export const apiBase = "https://ipt-ti2-iptgram.azurewebsites.net/";
+import { apiBase } from '../api';
 
 export class Login extends React.Component {
   state = {

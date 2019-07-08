@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
+  "proxy":"https://ipt-ti2-iptgram.azurewebsites.net",
   "main": "src/index.js",
   "dependencies": {
     "react": "16.8.3",
