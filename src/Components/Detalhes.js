@@ -1,16 +1,16 @@
 import React from "react";
-import { getComments, addComment} from "../api"
+import { getComments, addComment, addLike } from "../api"
 
 export class Detalhes extends React.Component {
   constructor(props) {
     super(props);
-    
 
     this.state = {
       newCommentText: "",
       allComments: true,
       idComment:0,
       comments: []
+   
     };
   }
 
@@ -51,8 +51,20 @@ export class Detalhes extends React.Component {
     this.setState({ newCommentText: evt.target.value });
   }
 
+  async handleLike(newLike){
+    try {
+      let novoLike = await addLike(this.props.postId, newLike);
 
-
+      this.setState({
+        likes:[...this.state.likes, novoLike]
+      });
+    } catch(e){
+      console.error("Erro ao inserir", e );
+    }
+  }
+  handleNewLikeChange(evt) {
+    this.setState({ newLike: evt.target.value });
+  }
 
   render() {
     var comentarios=[];
@@ -88,7 +100,7 @@ export class Detalhes extends React.Component {
                     onChange={evt => this.handleNewCommentTextChange(evt)}
                     required
                   />
-                  <button type="submit" className="MyButtonC">
+                  <button type="submit" className="MyButtonC" onClick={evt => this.handleNewLikeChange(evt)}>
                     <span role="img" aria-label="Adicionar">
                       ▶
                     </span>

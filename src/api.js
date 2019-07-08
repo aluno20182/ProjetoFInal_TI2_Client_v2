@@ -62,3 +62,34 @@ export function getComments(id){
   }
 }
 
+
+export async function addLike(postId,currentlyLiking,likeCount) {
+
+  let like = {
+    postId: postId,
+    currentlyLiking: currentlyLiking,
+    likeCount: likeCount
+  };
+
+  let resposta = await fetch(apiBase + "api/posts/"+postId+"/like", null, {
+    method: "POST",
+    credentials: 'include',
+    headers: {
+      // vou enviar json
+      "Content-Type": "application/json",
+      // quero json
+      Accept: "application/json"
+    },
+    body: JSON.stringify(like)
+  });
+
+  if (resposta.ok) {
+    let novoLike = await resposta.json();
+    return novoLike;
+  } else {
+    let erro = await resposta.json();
+
+    throw erro;
+  }
+}
+
