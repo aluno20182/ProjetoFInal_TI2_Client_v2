@@ -5,23 +5,29 @@ export class Detalhes extends React.Component {
   constructor(props) {
     super(props);
 
+    /**
+     * newCommentText - é o texto do novo comentário que se inicia como string vazia
+     * comments - um array de comentarios onde será adicionado o novo comentario
+     * newLike (não implementado a 100% no projeto mas representa a entrada de um novo like na api)
+     */
     this.state = {
       newCommentText: "",
-      allComments: true,
-      idComment:0,
-      comments: []
-   
+      comments: [],
+      newLike: 0
     };
   }
 
 
-
+  // o commentsFromApi vai esperar através do uso do await que os dados dos comentarios sejam carregados
+  //ou seja, apenas tem dados quando vier do fetch
+  //o setState guarda os dados do comentario ou seja atualiza a variavel do state
   async componentDidMount(){
-    console.log(this.props.postId);
     let commentsFromApi = await getComments(this.props.postId);
     this.setState({ comments: commentsFromApi });
   }
 
+
+  //Submete os dados do comentario
   async handleSubmit(evt) {
     evt.preventDefault();
 
@@ -31,14 +37,13 @@ export class Detalhes extends React.Component {
 
   }
 
+  //a variavel novo comentario vai esperar que o postId e o newCommentText sejam carregados
   async handleNewComment(newCommentText) {
     try {
       let novoComentario = await addComment(this.props.postId, newCommentText);
 
       this.setState({
-        // Criar um novo array a partir do anterior
-        // (...), e adicionar a nova tarefa
-        // a esse novo array.
+        //(...) significa que vai "duplicar" o array e adicionar o "novoComentario" ao mesmo
         comments: [...this.state.comments, novoComentario]
       });
     } catch (e) {
@@ -46,11 +51,20 @@ export class Detalhes extends React.Component {
     }
   }
 
-
+    //o setState guarda os dados do novo comentario ou seja atualiza a variavel do state com o newCommentText
   handleNewCommentTextChange(evt) {
     this.setState({ newCommentText: evt.target.value });
   }
 
+    //Submete os dados do like
+  handleSubmitLike(evt) {
+    evt.preventDefault();
+
+    this.props.onNewLike(this.state.newLike);
+
+    this.setState({ newLike: "" });
+  }
+    //a variavel novo comentario vai esperar que o postId e o newLike sejam carregados
   async handleLike(newLike){
     try {
       let novoLike = await addLike(this.props.postId, newLike);
@@ -62,10 +76,17 @@ export class Detalhes extends React.Component {
       console.error("Erro ao inserir", e );
     }
   }
-  handleNewLikeChange(evt) {
-    this.setState({ newLike: evt.target.value });
+  handleNewLike = (evt) =>{
+    let aux = evt.target.value + 1; this.setState({newLike: aux});
+    console.log(this.state.newLike)
   }
 
+  /**
+   * Render:
+   * -apresenta os detalhes de um post 
+   * -apresenta os comentários
+   * 
+   */
   render() {
     var comentarios=[];
     if(this.state.comments.length > 0) comentarios= this.state.comments.map(function(comentario) { 
@@ -85,7 +106,7 @@ export class Detalhes extends React.Component {
           />
           <div className="div1">
             <div className="div2">
-              <button type="button" className="MyButton">
+              <button type="button" className="MyButton" onClick={evt => this.handleNewLike(evt)}>
               ❤
               </button> <h3 className="nLikes">Likes: {this.props.likes}</h3>
             </div>
@@ -100,7 +121,7 @@ export class Detalhes extends React.Component {
                     onChange={evt => this.handleNewCommentTextChange(evt)}
                     required
                   />
-                  <button type="submit" className="MyButtonC" onClick={evt => this.handleNewLikeChange(evt)}>
+                  <button type="submit" className="MyButtonC">
                     <span role="img" aria-label="Adicionar">
                       ▶
                     </span>

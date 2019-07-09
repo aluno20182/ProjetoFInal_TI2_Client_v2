@@ -1,16 +1,21 @@
+
+//apiBase declarada desta maneira pois no JSON foi adicionado um proxy
 export const apiBase = "/";
 
+
+//função que vai buscar os atributos de um post
 export function getPosts(query) {
   let termosPesquisa = new URLSearchParams();
 
   if (query) {
     termosPesquisa.set("query", query);
   }
-
+  //fetch faz o pedido de Get dos posts à api
   return fetch(apiBase + "api/posts?" + termosPesquisa.toString(), {
     method: "GET"
   }).then(resposta => {
     console.warn(resposta);
+    //se for válido (200) retorna o json
     if (resposta.status === 200) {
       return resposta.json();
     } else {
@@ -19,7 +24,9 @@ export function getPosts(query) {
   });
 }
 
+
 export function getComments(id){
+  //fetch que faz o pedido dos comentarios à api
   return fetch(apiBase + "api/posts/"+id+"/comments", {
     method: "GET"
   }).then(resposta => {
@@ -33,6 +40,8 @@ export function getComments(id){
 
  }
 
+
+//Adição de comentario
  export async function addComment(postID, comment) {
   let comentario = {
     postId: postID,
@@ -62,7 +71,7 @@ export function getComments(id){
   }
 }
 
-
+//Adicao de um novo like, (funcionalidade nao implementada no projeto)
 export async function addLike(postId,currentlyLiking,likeCount) {
 
   let like = {
