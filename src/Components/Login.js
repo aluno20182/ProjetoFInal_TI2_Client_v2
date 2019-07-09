@@ -15,7 +15,7 @@ export class Login extends React.Component {
   handleSubmit = async e => {
     e.preventDefault();
 
-    //Objeto Login
+    //Objeto Login, guarda o valor introduzido no user e na pass
     const loginData = {
       userName: document.getElementById("user").value,
       password: document.getElementById("pass").value
@@ -33,14 +33,17 @@ export class Login extends React.Component {
     console.log(response);
     let status = response.status;
     switch (status) {
+      //em caso de sucesso
       case 200:
         //Redirect
         this.setState({ redirect: "/posts" });
         break;
+      //em caso de pass ou user incorreto
       case 401:
         this.setState({ alertisNotVisible: false });
         alert("Password ou User errado, tente novamente!");
         break;
+      //qq outro tipo de erro
       default:
         console.log("ah shit, here we go again");
         break;
@@ -50,6 +53,7 @@ export class Login extends React.Component {
   render() {
     console.log(this.props);
 
+    //Caso seja rederecionado
     if (this.state.redirect) {
       console.log(this.state.redirect);
       return <Redirect to={{ pathname: this.state.redirect }} />;

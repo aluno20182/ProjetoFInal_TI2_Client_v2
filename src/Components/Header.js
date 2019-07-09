@@ -2,12 +2,12 @@ import React from "react";
 
 export class Header extends React.Component {
   out() {
-    //Redirect
+    //Redereciona para o login
     window.location = '/';
   }
 
   home() {
-    //Redirect
+    //Redereciona para o feed
     window.location = '/posts';
   }
 

@@ -19,16 +19,20 @@ export class MainContent extends React.Component {
     console.log("Body");
     console.log(this.state);
     window.scroll(0,0);
+
+    //Mostra todos os posts 
     if (this.props.filter === "" && this.state.allPosts) {
       return <div className="body MainContent">{this.postPosts()}</div>;
-    } else if (this.state.allPosts) {
+    }//mostra as propriedades de cada post 
+    else if (this.state.allPosts) {
       return (
         <div className="body MainContent">
           {" "}
           {this.postTipo(this.props.filter)}{" "}
         </div>
       );
-    } else {
+    } //Mostra os details
+    else {
       return <div className="body">{this.postDetail(this.state.idPost)}</div>;
     }
   }
