@@ -60,17 +60,16 @@ export class Login extends React.Component {
     }
 
     return (
-      <div class="login-page">
-        <div class="form">
+      <div className="login-page">
+        <div className="form">
           <h1>LOGIN</h1>
-          <form class="login-form" onSubmit={this.handleSubmit}>
+          <form className="login-form" onSubmit={this.handleSubmit}>
             <input
               type="text"
               className="form-control"
               id="user"
               placeholder="username"
               required
-              value="aluno20182"
             />
             <input
               type="password"
@@ -78,7 +77,6 @@ export class Login extends React.Component {
               id="pass"
               placeholder="password"
               required
-              value="a10ac48e"
             />
             <button type="submit">login</button>
           </form>

@@ -78,7 +78,6 @@ export class MainContent extends React.Component {
       if (this.props.posts[i].tipo === filter) {
         postTipoComponent.push(
           <Moldura
-            key={this.props.posts[i].id}
             postId={this.props.posts[i].id}
             tipo={this.props.posts[i].tipo}
             likes={this.props.posts[i].likes}
@@ -102,7 +101,6 @@ export class MainContent extends React.Component {
         postDetalhesPost.push(
           <Detalhes
             return={() => this.showPosts()}
-            key={this.props.posts[i].id}
             postId={this.props.posts[i].id}
             tipo={this.props.posts[i].caption}
             author={this.props.posts[i].user.name}
