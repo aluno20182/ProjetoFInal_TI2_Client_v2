@@ -70,7 +70,7 @@ export class MainContent extends React.Component {
     return postComponent;
   };
 
-  //função que vai buscar apenas aqueles selecionados
+  //função que apresenta as propriedades de cada foto
   postTipo = filter => {
     console.log(this.props.posts);
     const postTipoComponent = [];

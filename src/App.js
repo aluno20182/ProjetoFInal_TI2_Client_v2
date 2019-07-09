@@ -57,17 +57,19 @@ export class App extends React.Component {
       </div>
     );
   }
+
+  //função que vai buscar os posts apos o search
   async search(searchTxt) {
-    // let searchTxt = document.getElementById("searchBar").value;
-    try {
+    
       let postsFromApi = await getPosts(searchTxt);
 
       this.setState({
         posts: postsFromApi,
         isLoading: false
       });
-    } catch (e) {
-      console.error("Erro ao ler os posts", e);
-    }
+    
+      if(!this.props.postsFromApi){
+      console.log("Erro ao ler os posts");
+      }
   }
 } export default App;
